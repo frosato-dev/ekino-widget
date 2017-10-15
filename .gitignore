@@ -7,7 +7,7 @@ node_modules
 .grunt
 _SpecRunner.html
 __benchmarks__
-build/
+build/*
 remote-repo/
 coverage/
 .module-cache
@@ -33,3 +33,4 @@ chrome-user-data
 *.swo
 *react*min*.js
 !src/node_modules
+package-lock.json
