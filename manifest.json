@@ -1,8 +1,8 @@
 {
-  "manifest_version": 1,
+  "manifest_version": 2,
   "name": "MoodBoard",
-  "description": "Ekino MoodBoard",
   "version": "0.0.0.1",
+  "description": "Ekino MoodBoard",
   "background": {
     "scripts": [
       "event.js"
