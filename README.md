@@ -12,7 +12,7 @@ npm install gulp-cli -g
 
 #### Run project:
 ```
-gulp watch
+npm start
 ```
 #### Development folder: 
 

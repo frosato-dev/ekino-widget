@@ -4,6 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
+    "start": "gulp watch",
     "precommit": "lint-staged",
     "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write '{event, popup}/src/**/*.{js,json,css}'",
     "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 '{event, popup}/src/**/*.{js,json,css}'",
