@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-
-import App from './modules/app/App'
-
 import { Store } from 'react-chrome-redux'
 import { Provider } from 'react-redux'
+
+import './index.css'
+import App from './modules/App/App'
 
 
 const proxyStore = new Store({
