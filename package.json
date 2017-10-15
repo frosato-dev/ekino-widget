@@ -4,7 +4,12 @@
   "private": true,
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "precommit": "lint-staged",
+    "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write '{event, popup}/src/**/*.{js,json,css}'",
+    "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 '{event, popup}/src/**/*.{js,json,css}'",
+    "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
+    "eslint:staged": "eslint --fix",
+    "eslint:test": "eslint ./src"
   },
   "author": "Tyler Shaddix",
   "dependencies": {
@@ -24,6 +29,24 @@
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7",
     "rimraf": "^2.5.0",
-    "webpack": "^2.6.0"
+    "webpack": "^2.6.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.2.2",
+    "prettier": "^1.7.0"
+  },
+  "lint-staged": {
+    "{event, popup}/src/**/*.json": [
+      "fmt:staged",
+      "git add"
+    ],
+    "{event, popup}/src/**/*.css": [
+      "git add"
+    ],
+    "{event, popup}/src/**/*.js": [
+      "fmt:staged",
+      "eslint:staged",
+      "test:staged",
+      "git add"
+    ]
   }
 }
