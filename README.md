@@ -1,4 +1,4 @@
-# EKINO MoodBoard
+# ChromeExtension with Stack
 
 ### Getting started
 
@@ -30,3 +30,6 @@ npm start
 
 
 Based on [react-chrome-redux-example](https://github.com/tshaddix/react-chrome-redux-examples) by [Tyler Shaddix](https://github.com/tshaddix) 
+
+### Spirit:
+* [The long way !](docs/tech-thought.md)

@@ -1,4 +1,2 @@
-export default {
-    appId: 'app',
-    portName: 'example',
-}
+export const appId = 'app'
+export const portName = 'example'

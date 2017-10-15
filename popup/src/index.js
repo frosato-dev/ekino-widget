@@ -2,19 +2,19 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Store } from 'react-chrome-redux'
 import { Provider } from 'react-redux'
-import config from './config'
+import { portName, appId } from './config'
 
 import './index.css'
-import App from './modules/App/App'
+import Router from './modules/routing'
 
 
 const proxyStore = new Store({
-    portName: config.portName
+    portName
 })
 
 render(
     <Provider store={proxyStore}>
-        <App />
+        <Router />
     </Provider>,
-    document.getElementById(config.appId)
+    document.getElementById(appId)
 )
