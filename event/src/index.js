@@ -1,10 +1,10 @@
-import {createStore} from 'redux';
-import rootReducer from './reducers';
+import { createStore } from 'redux'
+import rootReducer from './reducers'
 
-import {wrapStore} from 'react-chrome-redux';
+import { wrapStore } from 'react-chrome-redux'
 
-const store = createStore(rootReducer, {});
+const store = createStore(rootReducer, {})
 
 wrapStore(store, {
-  portName: 'example'
-});
+    portName: 'example'
+})

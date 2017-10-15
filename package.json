@@ -6,11 +6,13 @@
   "scripts": {
     "start": "gulp watch",
     "precommit": "lint-staged",
-    "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write '{event, popup}/src/**/*.{js,json,css}'",
-    "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 '{event, popup}/src/**/*.{js,json,css}'",
+    "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
+    "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
     "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
     "eslint:staged": "eslint --fix",
-    "eslint:test": "eslint ./src"
+    "eslint:test": "eslint ./src",
+    "test": "",
+    "test:staged": "echo @TODO"
   },
   "author": "François Rosato",
   "dependencies": {
