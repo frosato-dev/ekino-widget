@@ -1,5 +1,5 @@
 {
-  "name": "rcr-example",
+  "name": "MoodBoard",
   "version": "0.0.1",
   "private": true,
   "description": "",
@@ -11,7 +11,7 @@
     "eslint:staged": "eslint --fix",
     "eslint:test": "eslint ./src"
   },
-  "author": "Tyler Shaddix",
+  "author": "François Rosato",
   "dependencies": {
     "react": "^15.5.0",
     "react-chrome-redux": "0.0.7",
