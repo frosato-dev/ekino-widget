@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractCss = (env) => new ExtractTextPlugin({
@@ -61,11 +61,14 @@ module.exports = {
   },
   plugins: [
       new ExtractTextPlugin('styles.css'), // CSS will be extrated into this file in the build directory
+      /*
+      Can't use live reload won't work anymore
       new HtmlWebpackPlugin({ // Generate the HTML index
           filename: 'popup.html',
           template: path.join(path.join(__dirname, 'src'), 'index.html'),
           title: process.env.npm_package_name,
       }),
+      */
   ],
 };
 
