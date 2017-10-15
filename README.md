@@ -1,4 +1,4 @@
-# EKINO TimeCapture
+# EKINO MoodBoard
 
 ### Getting started
 
