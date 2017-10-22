@@ -8,13 +8,15 @@ import './index.css'
 import Router from './modules/routing'
 
 
-const proxyStore = new Store({
+const store = new Store({
     portName
 })
 
-render(
-    <Provider store={proxyStore}>
-        <Router />
-    </Provider>,
-    document.getElementById(appId)
-)
+store.ready().then(() => {
+    render(
+        <Provider store={store}>
+            <Router store={store}/>
+        </Provider>,
+        document.getElementById(appId)
+    )
+});

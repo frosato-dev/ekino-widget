@@ -9,7 +9,7 @@
     "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
     "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
     "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
-    "eslint:staged": "eslint --fix",
+    "eslint:staged": "eslint --fix --max-warnings=0",
     "eslint:test": "eslint ./src",
     "test": "",
     "test:staged": "echo @TODO",
@@ -19,7 +19,7 @@
   "dependencies": {
     "babel-preset-stage-2": "^6.24.1",
     "react": "^16.0.0",
-    "react-chrome-redux": "0.0.7",
+    "react-chrome-redux": "^1.4.0",
     "react-dom": "^16.0.0",
     "react-redux": "^4.0.0",
     "react-router": "^4.2.0",
@@ -52,7 +52,6 @@
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "prettier": "^1.7.0",
-    "redux-devtools-extension": "^2.13.2",
     "remote-redux-devtools": "^0.5.12",
     "remotedev-server": "^0.2.4",
     "rimraf": "^2.5.0",
@@ -70,7 +69,6 @@
     ],
     "{event, popup}/src/**/*.js": [
       "fmt:staged",
-      "eslint:staged",
       "test:staged",
       "git add"
     ]

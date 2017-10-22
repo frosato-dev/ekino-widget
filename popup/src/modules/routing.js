@@ -7,14 +7,25 @@ import Home from './home/Home'
 import MoodBoard from './moodboard/MoodBoard'
 import TimeCapture from './timecapture/TimeCapture'
 
+// Push hack from action
+// https://github.com/tshaddix/react-chrome-redux/issues/39
 
-export default () => (
-    <ConnectedRouter history={history}>
-        <Switch>
-            <Route path="/mood-board" component={MoodBoard} exact/>
-            <Route path="/time" component={TimeCapture}/>
-            <Route path="/" component={Home}/>
-        </Switch>
-    </ConnectedRouter>
+// syncHistoryWithStore does not respect redux state
+// https://github.com/reactjs/react-router-redux/issues/534
 
-)
+export default ({ store }) => {
+
+    // Redirect to last path before closing
+    const location = store.getState().router.location
+    if(location) history.replace(location.pathname)
+
+    return (
+        <ConnectedRouter history={history}>
+            <Switch>
+                <Route path="/mood-board" component={MoodBoard} exact/>
+                <Route path="/time" component={TimeCapture}/>
+                <Route path="/" component={Home}/>
+            </Switch>
+        </ConnectedRouter>
+    )
+}

@@ -1,5 +1,5 @@
 import count from './count'
 
-export default ({
+export default {
     count
-})
+}
