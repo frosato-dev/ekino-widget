@@ -4,7 +4,7 @@
   "private": true,
   "description": "",
   "scripts": {
-    "start": "gulp watch",
+    "start": "remotedev & gulp watch",
     "precommit": "lint-staged",
     "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
     "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
@@ -12,16 +12,20 @@
     "eslint:staged": "eslint --fix",
     "eslint:test": "eslint ./src",
     "test": "",
-    "test:staged": "echo @TODO"
+    "test:staged": "echo @TODO",
+    "remotedev": "remotedev --hostname=localhost --port=8000"
   },
   "author": "François Rosato",
   "dependencies": {
+    "babel-preset-stage-2": "^6.24.1",
     "react": "^16.0.0",
     "react-chrome-redux": "0.0.7",
     "react-dom": "^16.0.0",
     "react-redux": "^4.0.0",
     "react-router": "^4.2.0",
+    "react-router-redux": "^5.0.0-alpha.8",
     "redux": "^3.0.4",
+    "redux-logger": "^3.0.6",
     "reset-css": "^2.2.1",
     "styled-components": "^2.2.1"
   },
@@ -48,6 +52,9 @@
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "prettier": "^1.7.0",
+    "redux-devtools-extension": "^2.13.2",
+    "remote-redux-devtools": "^0.5.12",
+    "remotedev-server": "^0.2.4",
     "rimraf": "^2.5.0",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",

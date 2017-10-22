@@ -1,20 +1,20 @@
 import React from 'react'
-import { MemoryRouter, Switch, Route } from 'react-router'
+import { Switch, Route } from 'react-router'
+import { ConnectedRouter } from 'react-router-redux'
+import history from './../../../core/history'
 
 import Home from './home/Home'
 import MoodBoard from './moodboard/MoodBoard'
 import TimeCapture from './timecapture/TimeCapture'
 
 
-const getUserConfirmation = (message, callback) => callback(window.confirm(message))
-
 export default () => (
-    <MemoryRouter getUserConfirmation={getUserConfirmation}>
+    <ConnectedRouter history={history}>
         <Switch>
             <Route path="/mood-board" component={MoodBoard} exact/>
             <Route path="/time" component={TimeCapture}/>
             <Route path="/" component={Home}/>
         </Switch>
-    </MemoryRouter>
+    </ConnectedRouter>
 
 )

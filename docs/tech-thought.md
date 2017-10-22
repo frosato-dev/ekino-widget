@@ -68,7 +68,6 @@ import { createMemoryHistory } from 'history'
 import { Router, Switch, Route } from 'react-router-dom'  
 import { render } from 'react-dom'
 
-
 const history = createMemoryHistory({
   initialEntries: [ '/' ],  // The initial URLs in the history stack
   initialIndex: 0,          // The starting index in the history stack
@@ -92,3 +91,47 @@ render (
 Anyway we loose navigation state when closing the popup !
 
 ### How to fix ?
+
+
+# Debugging
+
+to ease debugging i`ve setup a remote debugger for Redux (the one use with react-native) :
+* [remotedev-server](https://github.com/zalmoxisus/remotedev-server)
+* [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools#communicate-via-local-server)
+
+## In the code
+``package.json``
+```json
+{
+  "scripts": {
+    "start": "remotedev & gulp watch",
+    "remotedev": "remotedev --hostname=localhost --port=8000"
+  }
+}
+```
+
+
+``event/index.js``
+``` js
+import { composeWithDevTools } from 'remote-redux-devtools';
+
+
+const composeEnhancers = composeWithDevTools({ realtime: true, port: 8000 });
+const enhancer = composeEnhancers(
+    applyMiddleware([...]),
+);
+
+const store = createStore(combineReducers({...reducers}), enhancer)
+
+```
+
+## In Practice
+
+- Go to chrome extensions panel:
+- Under your extension go to : `inspect views: background page`
+
+then
+``
+- Click on Redux extension
+- Click `Open remote DevTools`
+- Setting (at the bottom) > check `Use Custom server` and set `port` to 8000
