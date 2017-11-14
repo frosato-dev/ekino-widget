@@ -1,6 +1,6 @@
 # Redux
 
-Since the data are not persistent in `popup.js` file but they are in the `background.js`, i needed to find a way store the data in the `background.js` and sync them easily every time we open the popup.
+Since the data are not persistent in `popup.js` file, but they are in the `background.js`, i needed to find a way store the data in the `background.js` and sync them easily between popup and background.
 
 My solution to this problem was to a great library named: [react-chrome-redux](https://github.com/tshaddix/react-chrome-redux).
 
@@ -45,7 +45,7 @@ wrapStore(store, {
 
 ## Two options to implement MemoryRouter
 
-### Custom
+### Builtin react-router MemoryRouter
 ```js
 import { MemoryRouter, Switch, Route } from 'react-router'  
 import { render } from 'react-dom'
@@ -61,8 +61,8 @@ render (
 
 ```
 
-### Builtin with react-router
 
+### Custom MemoryRouter
 ```js
 import { createMemoryHistory } from 'history'
 import { Router, Switch, Route } from 'react-router-dom'  
@@ -129,9 +129,6 @@ const store = createStore(combineReducers({...reducers}), enhancer)
 
 - Go to chrome extensions panel:
 - Under your extension go to : `inspect views: background page`
-
-then
-``
 - Click on Redux extension
 - Click `Open remote DevTools`
 - Setting (at the bottom) > check `Use Custom server` and set `port` to 8000
