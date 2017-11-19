@@ -5,6 +5,7 @@
   "description": "",
   "scripts": {
     "start": "remotedev & gulp watch",
+    "storybook": "start-storybook -p 9001 -c popup/.storybook",
     "precommit": "lint-staged",
     "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
     "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 'event/src/**/*.{js,json,css}' 'popup/src/**/*.{js,json,css}'",
@@ -30,6 +31,7 @@
     "styled-components": "^2.2.1"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.16",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
