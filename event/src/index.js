@@ -7,31 +7,7 @@ import history from './../../core/history'
 import reducers from './reducers'
 import { portName } from './../../popup/src/config'
 
-/* Not working, try to catch '@@router/LOCATION_CHANGE' to prevent redirecting on re-open
-const testRedirect = store => next => action => {
-
-    let _action = action
-
-    if((action.type === '@@router/LOCATION_CHANGE') && (action.payload.pathname === '/') ) {
-
-        console.log('innn')
-
-        _action = {
-            ...action,
-            payload: {
-                ...store.getState().router
-            }
-        }
-
-        console.log('intercept ?', _action)
-    }
-
-    return next(_action)
-}
-*/
-
 const middleware = [
-    //testRedirect,
     routerMiddleware(history) // Build the middleware for intercepting and dispatching navigation actions
 ]
 
