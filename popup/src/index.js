@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Store } from 'react-chrome-redux'
 import { Provider } from 'react-redux'
-import { portName, appId } from './config'
+import { portName, appId } from './../../core/config'
 
 import './index.css'
 import Router from './modules/routing'

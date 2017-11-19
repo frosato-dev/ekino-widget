@@ -1,14 +1,10 @@
 # ChromeExtension with Stack
 
-### Getting started
-
 #### Setup:
 
 ```
 npm install gulp-cli -g
 ```
-
-### Getting started
 
 #### Run project:
 ```
@@ -23,13 +19,15 @@ yarn storybook
 #### Folder structure: 
 
 ```
-├── event (Redux)
+├── core
+│   ├── config
+├── event
 │   ├── src
-│   │   ├── reducers 
-├── popup (React)
+│   │   ├── aliases (Redux actions)
+│   │   ├── reducers
+├── popup
 │   ├── src
 │   │   ├── core (shared)
-│   │       ├── components
 │   │   ├── modules (specific)
 ```
 
@@ -41,11 +39,16 @@ yarn storybook
 - Check `Use Custom server` and set `port` to `8000`
 
 
-### Library 
+### Libraries 
+* [react](https://reactjs.org/)
+* [redux](https://redux.js.org/)
+* [redux-thunk](https://github.com/gaearon/redux-thunk)
 * [react-chrome-redux](https://github.com/tshaddix/react-chrome-redux)
+* [styled-components](https://github.com/styled-components/styled-components)
+* [react-redux-firebase](https://github.com/prescottprue/react-redux-firebase)
 
 
-Based on [react-chrome-redux-example](https://github.com/tshaddix/react-chrome-redux-examples) by [Tyler Shaddix](https://github.com/tshaddix) 
+based on [react-chrome-redux-example](https://github.com/tshaddix/react-chrome-redux-examples) by [Tyler Shaddix](https://github.com/tshaddix) 
 
 ### Notes
 * [Good to know](docs/tech-thought.md)
