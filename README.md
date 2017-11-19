@@ -46,6 +46,8 @@ yarn storybook
 * [react-chrome-redux](https://github.com/tshaddix/react-chrome-redux)
 * [styled-components](https://github.com/styled-components/styled-components)
 * [react-redux-firebase](https://github.com/prescottprue/react-redux-firebase)
+* [react-storybook](https://github.com/storybooks/storybook/tree/master/app/react)
+* [redux-auth-wrapper](https://mjrussell.github.io/redux-auth-wrapper)
 
 
 based on [react-chrome-redux-example](https://github.com/tshaddix/react-chrome-redux-examples) by [Tyler Shaddix](https://github.com/tshaddix) 

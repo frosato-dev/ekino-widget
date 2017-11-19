@@ -36,3 +36,5 @@ yarn-error.json
 yarn.lock
 node_modules
 build/*
+
+firebase.config.js

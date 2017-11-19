@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
 import history from './../../../core/history'
 
+import Login from './auth/Login'
 import Home from './home/Home'
 import MoodBoard from './moodboard/MoodBoard'
 import TimeCapture from './timecapture/TimeCapture'
@@ -24,7 +25,7 @@ export default ({ store }) => {
             <Switch>
                 <Route path="/mood-board" component={MoodBoard} exact/>
                 <Route path="/time" component={TimeCapture}/>
-                <Route path="/" component={Home}/>
+                <Route path="/" component={Login}/>
             </Switch>
         </ConnectedRouter>
     )
