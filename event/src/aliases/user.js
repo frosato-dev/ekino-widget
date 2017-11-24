@@ -29,6 +29,20 @@ const login = ({ provider, ...credentials }) => {
 }
 
 export default {
+    USER_LOGGING_OUT: () => dispatch => {
+        getFirebase()
+            .logout()
+            .then(() =>
+                dispatch({
+                    type: USER_LOGGED_OUT,
+                    payload: {}
+                })
+            )
+            .catch(error => {
+                console.log(error)
+            })
+    },
+
     /**
    *
    * @param payload <Object>

@@ -12,6 +12,12 @@ class Login extends Component {
     })
   }
 
+  logout = () => {
+    this.props.dispatch({
+      type: 'USER_LOGGING_OUT'
+    })
+  }
+
   render() {
     const { error } = this.props
     console.log(error)
@@ -23,6 +29,9 @@ class Login extends Component {
         <GoogleButton onClick={() => this.login({ provider: 'google' })} />
         <button onClick={() => this.login({ email: "test@test.com", password: "testtest" })}>
           With credentials
+        </button>
+        <button onClick={() => this.logout()}>
+          Logout
         </button>
       </div>
     )
